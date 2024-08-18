@@ -1,0 +1,53 @@
+// petAdoptionForm.scss
+
+.pet-adoption-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgb(240,196,236);
+  background: linear-gradient(90deg, rgba(240,196,236,1) 0%, rgba(197,192,248,1) 62%, rgba(171,189,255,1) 100%);
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      margin-bottom: 5px;
+      color: black;
+    }
+
+    input[type="text"],
+    textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    textarea {
+      height: 100px; // Adjust as needed
+    }
+  }
+
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+}

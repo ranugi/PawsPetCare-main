@@ -1,0 +1,422 @@
+/* Style for the container holding the image */
+.flex.justify-center.mt-8 {
+  /* If you need any additional styling for the container, add here */
+}
+
+/* Style specifically for the image */
+.flex.justify-center.mt-8 img {
+  max-width: 100%; /* Ensures the image is responsive and does not overflow its container */
+  height: auto; /* Maintains the aspect ratio of the image */
+  border-radius: 8px; /* Optional: Adds rounded corners to the image */
+  /* Add any additional styling you need for the image */
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px 20px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .search-input {
+    padding: 8px 15px;
+  }
+}
+
+
+/* Main container style */
+.product-list-container {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Popup notification styles */
+.all-products-popup {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.all-products-popup-message {
+  margin: 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* Product list and categories */
+.all-products-list,
+.all-products-categories {
+  margin-bottom: 20px;
+}
+
+.all-products-categories-title {
+  font-size: 1.5rem; /* Larger font size for visibility */
+  font-weight: bold; /* Bold for emphasis */
+  color: #333; /* A darker shade for contrast */
+  padding-bottom: 0.5rem; /* Spacing between title and category buttons */
+  border-bottom: 2px solid #007bff; /* A line to distinguish the section */
+  margin-bottom: 1rem; /* Space below the title */
+  text-align: center; /* Centering the title text */
+}
+
+
+.all-products-carousel-indicators {
+  display: flex; /* Use flexbox for alignment */
+  flex-wrap: wrap; /* Wrap buttons if they exceed the container width */
+  justify-content: center; /* Center buttons in the container */
+  gap: 20px; /* Space between buttons */
+  padding: 1rem 0; /* Padding around the button container */
+}
+
+.all-products-category-btn,
+.products-category-btn {
+  background-color: #007bff; /* Primary color for buttons */
+  color: white; /* Text color for buttons */
+  padding: 10px 20px; /* Increase padding for a larger button */
+  font-size: 16px; /* Larger font size for clarity */
+  font-weight: 600; /* Make the font bolder */
+  letter-spacing: 0.05em; /* Add some spacing between letters for legibility */
+  margin: 10px 5px; /* Add some margin around the buttons for spacing */
+  border-radius: 25px; /* More pronounced rounded corners */
+  transition: all 0.3s ease; /* Smooth transition for interactive effects */
+  border: none; /* No border */
+  cursor: pointer; /* Cursor to pointer to indicate clickable */
+  display: inline-flex; /* Display as inline-flex to center text and icons vertically */
+  align-items: center; /* Align items in the center vertically */
+  justify-content: center; /* Center content horizontally */
+  text-transform: uppercase; /* UPPERCASE text for a consistent look */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.all-products-category-btn:hover,
+.products-category-btn:hover {
+  background-color: #0056b3; /* Darker shade on hover for a more interactive feel */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Larger shadow on hover for a "lifted" effect */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.active-category {
+  background-color: #ffc107; /* Different background for active state to make it stand out */
+  color: #000; /* Dark text color for contrast */
+}
+
+
+
+@media (max-width: 768px) {
+  .all-products-category-btn,
+  .products-category-btn {
+    padding: 8px 15px; /* Adjusted padding */
+    font-size: 16px; /* Adjusted font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .all-products-category-btn,
+  .products-category-btn {
+    padding: 6px 12px; /* Smaller padding for mobile */
+    font-size: 14px; /* Smaller font size for readability on small screens */
+  }
+}
+
+
+
+
+/* Products grid - using grid layout */
+.all-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates a responsive grid with columns of at least 250px */
+  gap: 20px; /* Space between grid items */
+  margin-top: 20px; /* Space above the grid */
+}
+
+.all-products-item {
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push the footer to the bottom */
+  margin-bottom: 20px; /* Adjust the bottom margin to control vertical spacing between grid rows */
+  padding: 15px; /* Add padding inside each grid item */
+  border: 2px solid #ddd; /* Existing styles */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for product items */
+.all-products-item:hover {
+  transform: translateY(-5px); /* Slightly raise the item */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+
+.all-products-item-image img {
+  width: 100%; /* This ensures the image takes up the full width of its container */
+  height: 250px; /* Specify a fixed height for the images */
+  object-fit: cover; /* This will ensure the image covers the area, cropping it if necessary */
+  display: block;
+  object-fit: contain; /* Adjusts image to fit without cropping */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity; /* Optimizes animations */
+}
+.all-products-item-image:hover img {
+  transform: scale(1.08); /* Slightly larger scale for emphasis */
+  opacity: 0.8; /* Slightly transparent */
+}
+.all-products-item-image {
+  position: relative;
+  overflow: hidden; /* Ensure the overlay fits within the image container */
+}
+
+.all-products-item-image::after {
+  content: ""; /* Replace with your desired text or use an attribute value */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 1.5rem; /* Adjust based on your design */
+  font-weight: bold;
+}
+
+.all-products-item-image:hover::after {
+  opacity: 1; /* Show the overlay on hover */
+}
+
+
+@media (max-width: 768px) {
+  .all-products-item {
+    min-height: 150px; /* Smaller min-height for tablet and mobile */
+    margin-bottom: 15px; /* Smaller margin for tighter spacing on small screens */
+    /* Other responsive adjustments... */
+  }
+  
+  .all-products-item-info,
+  .all-products-item-action {
+    /* Adjust padding and margins for smaller screens */
+    margin: 3px 0;
+    padding: 5px;
+    /* Other responsive adjustments... */
+  }
+}
+.all-products-item-action {
+  margin-top: auto; /* Pushes the action section to the bottom */
+}
+
+
+.all-products-item-info {
+  padding: 15px;
+}
+
+.all-products-item-name {
+  font-size: 16px; /* Larger font size */
+  font-weight: 600; /* Increased weight for emphasis */
+  color: #333; /* Darker color for better readability */
+  margin: 10px 0; /* Added margin for spacing */
+  text-transform: uppercase; /* Optional: capitalize all letters */
+  text-overflow: ellipsis; /* Ensures the text doesn't overflow its container */
+  white-space: nowrap; /* Keeps the text on a single line */
+  overflow: hidden; /* Hides overflow */
+  display: block; /* Block display to fill the width of its container */
+  max-width: 100%; /* Ensures the name doesn't exceed its container's width */
+}
+
+
+.all-products-item-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.badge-success,
+.badge-danger {
+  padding: 5px 10px; /* Adjust padding for optimal appearance */
+  font-size: 12px; /* Adjusted font size for better visibility */
+  border-radius: 15px; /* Rounded corners for a pill-like appearance */
+  color: white;
+  display: inline-flex; /* Use inline-flex to keep badges in line with text */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  margin: 5px 0; /* Add margin for spacing */
+  text-transform: uppercase; /* Capitalize the text for emphasis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for interaction */
+  cursor: pointer; /* Indicate that the badge is clickable */
+}
+
+.badge-success {
+  background-color: #28a745; /* Green background indicates availability */
+}
+
+.badge-danger {
+  background-color: #dc3545; /* Red background indicates unavailability */
+}
+
+.badge-success:hover,
+.badge-danger:hover {
+  transform: scale(1.05); /* Enlarge badge on hover for interaction feedback */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increase shadow on hover for a "lifted" effect */
+}
+
+
+
+.all-products-item-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.all-products-item-price i {
+  margin-right: 5px;
+  color: #ffbf00;
+}
+
+.all-products-item:hover .all-products-item-price {
+  transform: scale(1.1);
+  color: #dc3545;
+}
+
+
+.all-products-item-description {
+  font-size: 16px;
+  color: #555;
+  margin: 10px 0;
+  line-height: 1.6;
+  text-align: justify;
+  padding: 0 15px;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+/* Responsive adjustments for the description on smaller screens */
+@media (max-width: 768px) {
+  .all-products-item-description {
+    font-size: 14px; /* Smaller font size on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .all-products-item-description {
+    font-size: 13px; /* Even smaller font size on mobile phones */
+  }
+}
+
+
+.all-products-item-action {
+  text-align: center;
+  padding: 10px;
+}
+
+.all-products-add-to-cart-btn {
+  padding: 8px 16px; /* Reduced padding for a smaller button */
+  font-size: 0.85rem; /* Smaller font size for compactness */
+  font-weight: bold; 
+  color: white; 
+  background-color: #007bff; 
+  border: none; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); /* Lighter shadow for subtlety */
+  cursor: pointer; 
+  transition: all 0.2s ease-in-out; 
+  text-transform: uppercase; 
+  letter-spacing: 0.5px; /* Slightly reduced letter spacing */
+  display: inline-block; 
+  margin-top: 10px; 
+  
+}
+
+.all-products-add-to-cart-btn:hover {
+  background-color: #218838; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-2px); /* Slight upward lift on hover for dynamism */
+}
+
+.all-products-add-to-cart-btn:active {
+  background-color: #1e7e34; 
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Inner shadow for a pressed effect */
+  transform: translateY(1px); /* Slight downward push to simulate a button press */
+}
+
+.all-products-add-to-cart-btn.out-of-stock {
+  background-color: #dc3545; /* Red color for 'Out of Stock' */
+  cursor: not-allowed; /* Change cursor to indicate the button is disabled */
+  opacity: 0.7; /* Optional: change the opacity to indicate it is disabled */
+}
+
+.all-products-add-to-cart-btn:not(.out-of-stock):hover {
+  background-color: #218838; /* Greenish shade on hover for available items */
+  /* ... existing hover styles ... */
+}
+
+@media (max-width: 768px) {
+  .all-products-add-to-cart-btn {
+    padding: 8px 20px; /* Adjusted padding on tablets */
+    font-size: 0.85rem; 
+    margin-top: 5px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .all-products-add-to-cart-btn {
+    padding: 7px 18px; /* Even smaller padding on mobile phones */
+    font-size: 0.8rem; /* Slightly smaller font size for mobile devices */
+    margin-top: 5px; 
+  }
+}
+
+
+.all-products-item-description,
+.all-products-item-price {
+  font-size: 1.2rem; /* Smaller font size */
+  margin: 5px 0; /* Less margin */
+}
+
+.scrollable-description {
+  max-height: 100px; 
+  overflow-y: auto; 
+  padding-right: 5px;
+}
+
